@@ -9,8 +9,6 @@ set -e
 : ${GANESHA_EXPORT_ID:="77"}
 : ${GANESHA_EXPORT:="/export"}
 : ${GANESHA_PSEUDO_PATH:="/"}
-: ${GANESHA_ACCESS:="*"}
-: ${GANESHA_ROOT_ACCESS:="*"}
 : ${GANESHA_NFS_PROTOCOLS:="3,4"}
 : ${GANESHA_TRANSPORTS:="UDP,TCP"}
 : ${GANESHA_BOOTSTRAP_CONFIG:="yes"}
@@ -34,8 +32,6 @@ EXPORT
 		# Access control options
 		Access_Type = "${GANESHA_ACCESS_TYPE}";
 		Squash = No_Root_Squash;
-		Root_Access = "${GANESHA_ROOT_ACCESS}";
-		Access = "${GANESHA_ACCESS}";
 
 		# NFS protocol options
 		Transports = "${GANESHA_TRANSPORTS}";
