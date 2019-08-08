@@ -14,6 +14,7 @@ set -e
 : ${GANESHA_NFS_PROTOCOLS:="3,4"}
 : ${GANESHA_TRANSPORTS:="UDP,TCP"}
 : ${GANESHA_BOOTSTRAP_CONFIG:="yes"}
+: ${GANESHA_ACCESS_TYPE:="RW"}
 
 function bootstrap_config {
 	echo "Bootstrapping Ganesha NFS config"
@@ -31,7 +32,7 @@ EXPORT
 		Pseudo = ${GANESHA_PSEUDO_PATH};
 
 		# Access control options
-		Access_Type = RW;
+		Access_Type = "${GANESHA_ACCESS_TYPE}";
 		Squash = No_Root_Squash;
 		Root_Access = "${GANESHA_ROOT_ACCESS}";
 		Access = "${GANESHA_ACCESS}";
